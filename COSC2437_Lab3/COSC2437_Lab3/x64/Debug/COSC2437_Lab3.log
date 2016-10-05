@@ -1,0 +1,8 @@
+﻿  {{xgTaskID=00000006}}
+  Main.cpp
+c:\users\andrew\source\repos\cosc2437_lab3\cosc2437_lab3\cosc2437_lab3\rafile.h(5): fatal error C1083: Cannot open include file: 'wcs_string.h': No such file or directory
+  {{xgTaskID=00000000}}
+  {{xgTaskID=00000007}}
+  RAFile.cpp
+c:\users\andrew\source\repos\cosc2437_lab3\cosc2437_lab3\cosc2437_lab3\rafile.h(5): fatal error C1083: Cannot open include file: 'wcs_string.h': No such file or directory
+  {{xgTaskID=00000000}}
