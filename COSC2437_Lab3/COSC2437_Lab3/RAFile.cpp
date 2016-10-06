@@ -164,3 +164,13 @@ RAFile::ErrCodes RAFile::Replace (ULong Index, const WCS_String & Str)
 		return FileNotOpen;
 	}
 }
+
+void RAFile::Dump()
+{
+	WCS_String Data;
+	for (int i = 0; i < NumRecords; i++)
+	{
+		Get(i, Data);
+		cout << "File at index: " << i << " is " <<  Data << endl;
+	}
+}

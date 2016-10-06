@@ -21,6 +21,7 @@ class RAFile
 		};
 	public:
 		enum	ErrCodes {OK, FileAlreadyOpen, CannotOpenFile, FileNotOpen, InvalidIndex};
+
 							RAFile		();
 							~RAFile		();
 		ErrCodes			Close		();
@@ -28,6 +29,7 @@ class RAFile
 		ErrCodes			Insert		(ULong, const WCS_String &);
 		ErrCodes			Open		(const WCS_String &);
 		ErrCodes			Replace		(ULong, const WCS_String &);
+		void				Dump		();
 	private:
 							RAFile		(const RAFile &);
 		RAFile &			operator =	(const RAFile &);

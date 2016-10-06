@@ -24,24 +24,10 @@ void main()
 	FileName = "AAAA";
 	DB1.Insert(0, FileName);
 	DB1.Get(0, FileName);
-	cout << "Data read was: " << FileName << endl;
-	DB1.Get(1, FileName);
-	cout << "Data read was: " << FileName << endl;
-	DB1.Get(2, FileName);
-	cout << "Data read was: " << FileName << endl;
-	DB1.Get(3, FileName);
-	cout << "Data read was: " << FileName << endl;
-	DB1.Get(4, FileName);
-	cout << "Data read was: " << FileName << endl;
-	DB1.Get(5, FileName);
-	cout << "Data read was: " << FileName << endl;
-	DB1.Get(6, FileName);
-	cout << "Data read was: " << FileName << endl;
+	DB1.Dump();
 	cout << "What operation would you like to perform? (R,I,G,x): ";
 	commands.Read();
 	commands.GetAt(c, 0);
-	cout << "Input database location: ";
-	pos = ReadInt();
 	while ((c != 'x'))
 	{
 		switch (c)
@@ -65,8 +51,12 @@ void main()
 		case 'G':
 		case 'g':
 			pos = ReadInt();
-			DB1.Get(pos, FileName);
-			cout << FileName << endl;
+			if (pos == -1) DB1.Dump();
+			else if(pos > 0)
+			{
+				DB1.Get(pos, FileName);
+				cout << FileName << endl;
+			}
 			break;
 
 		default:
@@ -133,6 +123,10 @@ int ReadInt()
 			{
 				c = '\a';
 			}
+			break;
+		case '^c':
+			exit(1);
+			cout << "You hit Ctrl+C good for you...." << endl;
 			break;
 		default:
 			c = '\a';
